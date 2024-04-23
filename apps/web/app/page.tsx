@@ -1,6 +1,5 @@
 import { Button } from "@repo/ui/button";
 import { Links } from "@repo/ui/links";
-import Link from "next/link";
 
 export default function Page() {
   return (
