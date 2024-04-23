@@ -1,42 +1,33 @@
-import { Card } from "@repo/ui/card";
-import styles from "./page.module.css";
 import { Button } from "@repo/ui/button";
-
-const LINKS = [
-  {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
-  },
-  {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
-    description: "Learn more about monorepos with our handbook.",
-  },
-  {
-    title: "Templates",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
-    description: "Choose from over 15 examples and deploy with a single click.",
-  },
-  {
-    title: "Deploy",
-    href: "https://vercel.com/new",
-    description:
-      "Instantly deploy your Turborepo to a shareable URL with Vercel.",
-  },
-];
+import { Name } from "@repo/ui/name";
+import { Password } from "@repo/ui/password";
+import { Address } from "@repo/ui/address";
+import { Links } from "@repo/ui/links";
 
 export default function Page() {
   return (
     <main className="flex flex-col items-center justify-center h-screen">
-      <Button />
-      <div className={styles.grid}>
+      <h1>Docs</h1>
+      <form className="w-full mt-10 max-w-lg">
+        {/* First Name and Last Name */}
+        <Name />
+        {/* Password Input Filed */}
+        <Password />
+        {/* Address Input Field with City, State, Zip */}
+        <Address />
+        <div className="flex my-10 justify-center">
+          <Button />
+        </div>
+      </form>
+
+      <Links />
+      {/* <div className={styles.grid}>
         {LINKS.map(({ title, href, description }) => (
           <Card className={styles.card} href={href} key={title} title={title}>
             {description}
           </Card>
         ))}
-      </div>
+      </div> */}
     </main>
   );
 }
